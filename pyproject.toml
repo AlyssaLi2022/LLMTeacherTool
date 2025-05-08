@@ -1,0 +1,57 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm_teacher_tool"
+version = "0.1.0"
+authors = [
+ 
+  { name="Wenwen Li", email="wenwenli@bu.edu" },
+]
+description = "An LLM-powered tool for educators to generate materials, provide feedback, and grade documents."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License", # Assuming MIT License
+    "Operating System :: OS Independent",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Framework :: Streamlit",
+]
+# Core library dependencies
+dependencies = [
+    "openai>=1.0",
+    "python-dotenv>=1.0", # Keep for flexibility, harmless if not used
+    "numpy>=1.20",
+]
+
+[project.optional-dependencies]
+# Dependencies needed to run the Streamlit app
+app = [
+    "streamlit>=1.0",
+    "altair<5", # Specific version needed for compatibility
+]
+# Example for development dependencies (e.g., testing)
+# dev = ["pytest"]
+
+[project.scripts]
+# Command-line script entry point
+teacher-tool = "doc_analyzer.cli:main"
+
+[project.urls]
+# !!! IMPORTANT: Replace with your actual GitHub repo URL (optional) !!!
+"Homepage" = "https://github.com/your_username/LLMTeacherTool"
+# "Bug Tracker" = "https://github.com/your_username/LLMTeacherTool/issues"
+
+# --- Tool specific settings for setuptools ---
+[tool.setuptools.packages.find]
+where = ["src"]  # Look in src directory
+include = ["doc_analyzer*"] # Include the doc_analyzer package and any subpackages
+# exclude = ["tests*"] # Example: if you had a tests directory in src to exclude

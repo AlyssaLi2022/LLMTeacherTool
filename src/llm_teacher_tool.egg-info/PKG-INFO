@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: llm_teacher_tool
+Version: 0.1.0
+Summary: An LLM-powered tool for educators to generate materials, provide feedback, and grade documents.
+Author-email: Wenwen Li <wenwenli@bu.edu>
+Project-URL: Homepage, https://github.com/your_username/LLMTeacherTool
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Framework :: Streamlit
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: openai>=1.0
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: numpy>=1.20
+Provides-Extra: app
+Requires-Dist: streamlit>=1.0; extra == "app"
+Requires-Dist: altair<5; extra == "app"

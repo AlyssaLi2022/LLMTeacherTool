@@ -1,0 +1,2 @@
+[console_scripts]
+teacher-tool = doc_analyzer.cli:main
